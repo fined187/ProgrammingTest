@@ -4,6 +4,7 @@
 
 - 연못의 깊이
 ---
+```
 public static int getDepth(int[][] pondMap) {
 
         int result = 0;
@@ -34,6 +35,8 @@ public static int getDepth(int[][] pondMap) {
 
         return result;
     }
+```
+
 ---
 
 
