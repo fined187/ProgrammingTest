@@ -56,6 +56,38 @@ public static String getResource(String fileName) throws Exception {
 
 ```
 
+## Test2
+
+-계산 Logic
+```
+
+public class Calculation {
+
+    private int value;
+
+    public Calculation() {
+        this.value = 0;
+    }
+
+    public Calculation add(int num) {
+        this.value += num;
+        return this;
+    }
+
+    public Calculation subtract(int num) {
+        this.value -= num;
+        return this;
+    }
+
+    public int out() {
+        return this.value;
+    }
+
+```
+
+## Test3
+
+
 
 ## Test5
 
