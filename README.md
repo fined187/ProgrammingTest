@@ -1,5 +1,62 @@
 # ProgrammingTest
 
+## Test1
+-Bread 객체 생성
+```
+
+public class BreadFactory {
+    public static Bread create(String breadType, int flour, int water, int cream) {
+
+        Bread bread;
+        if(breadType.equals("butter")) {
+            bread = new ButterBread(flour, water, cream);
+        } else if (breadType.equals("cream")) {
+            bread = new CreamBread(flour, water, cream);
+        } else {
+            bread =  new SugarBread(flour, water, cream);
+        }
+
+        return bread;
+    }
+
+```
+
+-JSON I/O
+```
+
+public static String getResource(String fileName) throws Exception {
+
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL url = classLoader.getResource(fileName);
+        StringBuilder builder = new StringBuilder();
+
+        if (url == null) {
+            System.out.println(String.format("The file does not exist in classpath. fileName : %s", fileName));
+            System.exit(0);
+        }
+
+        File file = new File(url.getFile());
+
+        try {
+            BufferedReader reader = new BufferedReader(new java.io.FileReader(file));
+
+            String line = reader.readLine();
+
+            while (line != null) {
+                builder.append(line);
+                line = reader.readLine();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return builder.toString().replaceAll(" ", "");
+    }
+
+```
+
+
 ## Test5
 
 - 연못의 깊이
